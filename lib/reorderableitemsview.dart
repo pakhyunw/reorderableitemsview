@@ -553,8 +553,8 @@ class _ReorderableListContentState extends State<_ReorderableListContent>
                   ? const SizedBox()
                   : toWrapWithSemantics,
               childWhenDragging: const SizedBox(),
-              dragAnchor: DragAnchor.child,
               onDragStarted: onDragStarted,
+              dragAnchorStrategy: childDragAnchorStrategy,
               // When the drag ends inside a DragTarget widget, the drag
               // succeeds, and we reorder the widget into position appropriately.
               onDragCompleted: onDragEnded,
@@ -586,8 +586,8 @@ class _ReorderableListContentState extends State<_ReorderableListContent>
                   ? const SizedBox()
                   : toWrapWithSemantics,
               childWhenDragging: const SizedBox(),
-              dragAnchor: DragAnchor.child,
               onDragStarted: onDragStarted,
+              dragAnchorStrategy: childDragAnchorStrategy,
               // When the drag ends inside a DragTarget widget, the drag
               // succeeds, and we reorder the widget into position appropriately.
               onDragCompleted: onDragEnded,
@@ -717,7 +717,6 @@ class _ReorderableListContentState extends State<_ReorderableListContent>
 }
 
 class StaggeredTileExtended extends StaggeredTile {
-    StaggeredTileExtended.count(
-      int crossAxisCellCount, num mainAxisCellCount)
+  StaggeredTileExtended.count(int crossAxisCellCount, num mainAxisCellCount)
       : super.count(crossAxisCellCount, mainAxisCellCount.toDouble());
 }
